@@ -8,7 +8,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -31,13 +30,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
+  double tamanhoDoMapa = 16;
+
+  @override
   Widget build(BuildContext context) {
     return BonfireTiledWidget(
       joystick: Joystick(
-        directional: JoystickDirectional(),
+        directional:
+            JoystickDirectional(color: Colors.yellowAccent, isFixed: false),
       ),
       map: TiledWorldMap('map/pacman_map.json'),
-      player: PackMan(Vector2(10, 10)),
+      player: PackMan(Vector2(6 * tamanhoDoMapa, 10 * tamanhoDoMapa)),
     );
   }
 }
