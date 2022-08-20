@@ -1,5 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'package:pacman/personagens/pacman.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         directional: JoystickDirectional(),
       ),
       map: TiledWorldMap('map/pacman_map.json'),
+      player: PackMan(Vector2(10, 10)),
     );
   }
 }
