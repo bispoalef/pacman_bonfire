@@ -1,3 +1,4 @@
+import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,6 +31,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return BonfireTiledWidget(
+      joystick: Joystick(
+        directional: JoystickDirectional(),
+      ),
+      map: TiledWorldMap('map/pacman_map.json'),
+    );
   }
 }
