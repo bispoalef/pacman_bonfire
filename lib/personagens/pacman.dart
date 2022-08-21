@@ -2,7 +2,10 @@ import 'package:bonfire/bonfire.dart';
 import 'package:pacman/main.dart';
 import 'package:pacman/personagens/pacman_sprites.dart';
 
+import '../interface/score_controller.dart';
+
 class PackMan extends SimplePlayer with ObjectCollision {
+  late Controlador scoreController;
   PackMan(Vector2 position)
       : super(
           size: Vector2(tamanhoDoMapa + 10, tamanhoDoMapa + 10),
@@ -27,5 +30,18 @@ class PackMan extends SimplePlayer with ObjectCollision {
         ],
       ),
     );
+  }
+  @override
+  void onMount() {
+    scoreController = BonfireInjector.instance.get();
+    super.onMount();
+  }
+
+  void adicionarPontos(bool tipo) {
+    if (tipo == true) {
+      scoreController.adinionar();
+    } else {
+      scoreController.adinionarEspecial();
+    }
   }
 }

@@ -4,9 +4,12 @@ import 'package:pacman/itens_do_jogo/ponto.dart';
 import 'package:pacman/itens_do_jogo/ponto_especial.dart';
 import 'package:pacman/personagens/fastasma.dart';
 import 'package:pacman/personagens/pacman.dart';
+import 'interface/interface.dart';
+import 'interface/score_controller.dart';
 
 double tamanhoDoMapa = 16;
 void main() {
+  BonfireInjector.instance.put((i) => Controlador());
   runApp(const MyApp());
 }
 
@@ -33,6 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return BonfireTiledWidget(
       joystick: Joystick(
+        keyboardConfig: KeyboardConfig(),
         directional: JoystickDirectional(
           color: Colors.yellowAccent,
           isFixed: false,
@@ -52,6 +56,12 @@ class _MyHomePageState extends State<MyHomePage> {
       cameraConfig: CameraConfig(
         zoom: 1,
       ),
+      overlayBuilderMap: {
+        'placar': (context, game) => const ScoreWidget(),
+      },
+      initialActiveOverlays: const [
+        'placar',
+      ],
     );
   }
 }

@@ -34,6 +34,7 @@ class Fantasma extends SimpleEnemy with ObjectCollision {
       },
       radiusVision: tamanhoDoMapa * 10,
     );
+    
 
     super.update(dt);
   }

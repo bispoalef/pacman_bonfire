@@ -1,7 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 
 class PontoEspecialSprite {
-  static Future<SpriteAnimation> get pontoDireita => SpriteAnimation.load(
+  static Future<SpriteAnimation> get pontoEspecial => SpriteAnimation.load(
       'ponto.png',
       SpriteAnimationData.sequenced(
           amount: 1,

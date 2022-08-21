@@ -3,30 +3,21 @@ import 'package:pacman/itens_do_jogo/ponto_especial_sprite.dart';
 import 'package:pacman/main.dart';
 import 'package:pacman/personagens/pacman.dart';
 
-class PontoEspecial extends SimpleEnemy with ObjectCollision {
+class PontoEspecial extends GameDecoration with Sensor {
   PontoEspecial(Vector2 position)
-      : super(
-            size: Vector2(tamanhoDoMapa, tamanhoDoMapa),
-            position: position,
-            animation: SimpleDirectionAnimation(
-                idleRight: PontoEspecialSprite.pontoDireita,
-                runRight: PontoEspecialSprite.pontoDireita)) {
-    setupCollision(
-      CollisionConfig(
-        collisions: [
-          CollisionArea.rectangle(
-            size: Vector2(tamanhoDoMapa - 6, tamanhoDoMapa - 6),
-            align: Vector2(tamanhoDoMapa - 12, tamanhoDoMapa - 10),
-          ),
-        ],
-      ),
-    );
-  }
+      : super.withAnimation(
+          animation: PontoEspecialSprite.pontoEspecial,
+          position: position,
+          size: Vector2(tamanhoDoMapa, tamanhoDoMapa),
+        );
   @override
-  bool onCollision(GameComponent component, bool active) {
+  void onContact(GameComponent component) {
     if (component is PackMan) {
+      component.adicionarPontos(false);
       removeFromParent();
     }
-    return super.onCollision(component, active);
   }
+
+  @override
+  void onContactExit(GameComponent component) {}
 }
