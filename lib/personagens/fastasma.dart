@@ -34,8 +34,24 @@ class Fantasma extends SimpleEnemy with ObjectCollision {
       },
       radiusVision: tamanhoDoMapa * 10,
     );
-    
 
     super.update(dt);
   }
+
+  @override
+  bool onCollision(GameComponent component, bool active) {
+    if (component is PackMan) {
+      removeFromParent();
+    }
+    return super.onCollision(component, active);
+  }
 }
+
+  // @override
+  // bool onCollision(GameComponent component, bool active) {
+  //   if (component is PackMan) {
+  //     removeFromParent();
+  //   }
+  //   return super.onCollision(component, active);
+  // }
+

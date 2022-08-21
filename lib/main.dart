@@ -5,7 +5,7 @@ import 'package:pacman/itens_do_jogo/ponto_especial.dart';
 import 'package:pacman/personagens/fastasma.dart';
 import 'package:pacman/personagens/pacman.dart';
 import 'interface/interface.dart';
-import 'interface/score_controller.dart';
+import 'interface/controller.dart';
 
 double tamanhoDoMapa = 16;
 void main() {

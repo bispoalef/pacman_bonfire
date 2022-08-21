@@ -1,7 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 
-import 'score_controller.dart';
+import 'controller.dart';
 
 class ScoreWidget extends StatefulWidget {
   const ScoreWidget({Key? key}) : super(key: key);

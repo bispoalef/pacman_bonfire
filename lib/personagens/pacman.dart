@@ -2,7 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:pacman/main.dart';
 import 'package:pacman/personagens/pacman_sprites.dart';
 
-import '../interface/score_controller.dart';
+import '../interface/controller.dart';
 
 class PackMan extends SimplePlayer with ObjectCollision {
   late Controlador scoreController;
@@ -39,9 +39,11 @@ class PackMan extends SimplePlayer with ObjectCollision {
 
   void adicionarPontos(bool tipo) {
     if (tipo == true) {
-      scoreController.adinionar();
+      scoreController.adicionar();
     } else {
       scoreController.adinionarEspecial();
     }
   }
+
+
 }

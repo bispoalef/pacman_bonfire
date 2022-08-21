@@ -19,5 +19,6 @@ class PontoSimples extends GameDecoration with Sensor {
   }
 
   @override
-  void onContactExit(GameComponent component) {}
+  void onContactExit(GameComponent component) {
+  }
 }

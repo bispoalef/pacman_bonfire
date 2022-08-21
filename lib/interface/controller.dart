@@ -5,7 +5,7 @@ class Controlador extends ChangeNotifier {
 
   int get placar => _placar;
 
-  void adinionar({int qtd = 10}) {
+  void adicionar({int qtd = 10}) {
     _placar += qtd;
     notifyListeners();
   }
