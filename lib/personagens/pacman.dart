@@ -21,7 +21,8 @@ class PackMan extends SimplePlayer with ObjectCollision {
       CollisionConfig(
         collisions: [
           CollisionArea.rectangle(
-            size: Vector2(tamanhoDoMapa + 10, tamanhoDoMapa + 10),
+            size: Vector2(tamanhoDoMapa + 5, tamanhoDoMapa + 5),
+            align: Vector2(tamanhoDoMapa - 15, tamanhoDoMapa - 15),
           ),
         ],
       ),

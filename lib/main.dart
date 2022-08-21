@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ),
       player: PackMan(
-        Vector2(19 * tamanhoDoMapa, 25.5 * tamanhoDoMapa),
+        Vector2(19 * tamanhoDoMapa, 25.7 * tamanhoDoMapa),
       ),
       cameraConfig: CameraConfig(
         zoom: 1,

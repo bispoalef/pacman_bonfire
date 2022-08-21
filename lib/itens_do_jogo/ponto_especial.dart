@@ -15,7 +15,8 @@ class PontoEspecial extends SimpleEnemy with ObjectCollision {
       CollisionConfig(
         collisions: [
           CollisionArea.rectangle(
-            size: Vector2(tamanhoDoMapa, tamanhoDoMapa),
+            size: Vector2(tamanhoDoMapa - 6, tamanhoDoMapa - 6),
+            align: Vector2(tamanhoDoMapa - 12, tamanhoDoMapa - 10),
           ),
         ],
       ),

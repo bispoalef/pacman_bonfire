@@ -19,7 +19,8 @@ class Fantasma extends SimpleEnemy with ObjectCollision {
       CollisionConfig(
         collisions: [
           CollisionArea.rectangle(
-            size: Vector2(tamanhoDoMapa + 10, tamanhoDoMapa + 10),
+            size: Vector2(tamanhoDoMapa + 6, tamanhoDoMapa + 6),
+            align: Vector2(tamanhoDoMapa - 16, tamanhoDoMapa - 16),
           ),
         ],
       ),
