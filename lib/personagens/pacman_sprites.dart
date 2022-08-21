@@ -1,6 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 
-class SpritesDoJogo {
+class PacmanSprites {
   static Future<SpriteAnimation> get packmanDireita => SpriteAnimation.load(
       'sprites.png',
       SpriteAnimationData.sequenced(
@@ -21,7 +21,7 @@ class SpritesDoJogo {
       'sprites.png',
       SpriteAnimationData.sequenced(
           amount: 2,
-          stepTime: 0.3,
+          stepTime: 0.5,
           textureSize: Vector2(32, 32),
           texturePosition: Vector2(0, 96)));
 }

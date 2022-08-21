@@ -1,23 +1,29 @@
 import 'package:bonfire/bonfire.dart';
-import 'package:pacman/personagens/spites_do_jogo.dart';
+import 'package:pacman/main.dart';
+import 'package:pacman/personagens/pacman_sprites.dart';
 
 class PackMan extends SimplePlayer with ObjectCollision {
   PackMan(Vector2 position)
       : super(
-          size: Vector2(24, 24),
+          size: Vector2(tamanhoDoMapa + 10, tamanhoDoMapa + 10),
           position: position,
           animation: SimpleDirectionAnimation(
-            runRight: SpritesDoJogo.packmanDireita,
-            idleRight: SpritesDoJogo.packmanDireita,
-            idleUp: SpritesDoJogo.packmanCima,
-            runUp: SpritesDoJogo.packmanCima,
-            idleDown: SpritesDoJogo.packmanBaixo,
-            runDown: SpritesDoJogo.packmanBaixo,
+            runRight: PacmanSprites.packmanDireita,
+            idleRight: PacmanSprites.packmanDireita,
+            idleUp: PacmanSprites.packmanCima,
+            runUp: PacmanSprites.packmanCima,
+            idleDown: PacmanSprites.packmanBaixo,
+            runDown: PacmanSprites.packmanBaixo,
           ),
+          speed: 80,
         ) {
     setupCollision(
       CollisionConfig(
-        collisions: [CollisionArea.rectangle(size: Vector2(24, 24))],
+        collisions: [
+          CollisionArea.rectangle(
+            size: Vector2(tamanhoDoMapa + 10, tamanhoDoMapa + 10),
+          ),
+        ],
       ),
     );
   }

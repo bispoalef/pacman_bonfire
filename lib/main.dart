@@ -1,7 +1,11 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'package:pacman/itens_do_jogo/ponto.dart';
+import 'package:pacman/itens_do_jogo/ponto_especial.dart';
+import 'package:pacman/personagens/fastasma.dart';
 import 'package:pacman/personagens/pacman.dart';
 
+double tamanhoDoMapa = 16;
 void main() {
   runApp(const MyApp());
 }
@@ -11,12 +15,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
+    return const MaterialApp(
+      home: MyHomePage(),
     );
   }
 }
@@ -30,17 +30,28 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
-  double tamanhoDoMapa = 16;
-
-  @override
   Widget build(BuildContext context) {
     return BonfireTiledWidget(
       joystick: Joystick(
-        directional:
-            JoystickDirectional(color: Colors.yellowAccent, isFixed: false),
+        directional: JoystickDirectional(
+          color: Colors.yellowAccent,
+          isFixed: false,
+        ),
       ),
-      map: TiledWorldMap('map/pacman_map.json'),
-      player: PackMan(Vector2(6 * tamanhoDoMapa, 10 * tamanhoDoMapa)),
+      map: TiledWorldMap(
+        'map/pacman_map.json',
+        objectsBuilder: {
+          'fantasma': (properties) => Fantasma(properties.position),
+          'ponto_especial': (properties) => PontoEspecial(properties.position),
+          'ponto': (properties) => PontoSimples(properties.position),
+        },
+      ),
+      player: PackMan(
+        Vector2(19 * tamanhoDoMapa, 25.5 * tamanhoDoMapa),
+      ),
+      cameraConfig: CameraConfig(
+        zoom: 1,
+      ),
     );
   }
 }
