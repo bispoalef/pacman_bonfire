@@ -1,4 +1,5 @@
 import 'package:bonfire/bonfire.dart';
+import 'package:flutter/material.dart';
 import 'package:pacman/personagens/pacman.dart';
 import '../main.dart';
 import 'fantasma_sprites..dart';
@@ -41,17 +42,12 @@ class Fantasma extends SimpleEnemy with ObjectCollision {
   @override
   bool onCollision(GameComponent component, bool active) {
     if (component is PackMan) {
+     
       removeFromParent();
     }
     return super.onCollision(component, active);
   }
+
 }
 
-  // @override
-  // bool onCollision(GameComponent component, bool active) {
-  //   if (component is PackMan) {
-  //     removeFromParent();
-  //   }
-  //   return super.onCollision(component, active);
-  // }
 

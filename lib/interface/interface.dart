@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 import 'controller.dart';
 
-class ScoreWidget extends StatefulWidget {
-  const ScoreWidget({Key? key}) : super(key: key);
+class PlacarWidget extends StatefulWidget {
+  const PlacarWidget({Key? key}) : super(key: key);
 
   @override
-  State<ScoreWidget> createState() => _ScoreWidgetState();
+  State<PlacarWidget> createState() => _PlacarWidgetState();
 }
 
-class _ScoreWidgetState extends State<ScoreWidget> {
+class _PlacarWidgetState extends State<PlacarWidget> {
   late Controlador scoreController;
 
   @override

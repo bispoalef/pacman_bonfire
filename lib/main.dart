@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
         zoom: 1,
       ),
       overlayBuilderMap: {
-        'placar': (context, game) => const ScoreWidget(),
+        'placar': (context, game) => const PlacarWidget(),
       },
       initialActiveOverlays: const [
         'placar',

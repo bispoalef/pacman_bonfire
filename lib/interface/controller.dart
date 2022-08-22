@@ -18,4 +18,6 @@ class Controlador extends ChangeNotifier {
     _placar -= qtd;
     notifyListeners();
   }
+
+
 }
